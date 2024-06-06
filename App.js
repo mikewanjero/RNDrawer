@@ -1,18 +1,25 @@
 import { Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import { createDrawerNavigator } from "@react-navigation/drawer";
+// import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import WelcomeScreen from "./screens/WelcomeScreen";
 import UserScreen from "./screens/UserScreen";
+import { AntDesign } from "@expo/vector-icons";
 
-const Drawer = createDrawerNavigator();
+constBottomTab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator>
-        <Drawer.Screen name={"Welcome"} component={WelcomeScreen} />
-        <Drawer.Screen name={"User"} component={UserScreen} />
-      </Drawer.Navigator>
+      <BottomTab.Navigator
+        screenOptions={{
+          headerStyle: { backgroundColor: "#3c0a6b" },
+          headerTintColor: "white",
+        }}
+      >
+        <BottomTab.Screen name={"Welcome"} component={WelcomeScreen} />
+        <BottomTab.Screen name={"User"} component={UserScreen} />
+      </BottomTab.Navigator>
     </NavigationContainer>
   );
 }
