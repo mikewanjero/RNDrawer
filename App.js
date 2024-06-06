@@ -4,9 +4,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import WelcomeScreen from "./screens/WelcomeScreen";
 import UserScreen from "./screens/UserScreen";
-import { AntDesign } from "@expo/vector-icons";
 
-constBottomTab = createBottomTabNavigator();
+const BottomTab = createBottomTabNavigator();
 
 export default function App() {
   return (
