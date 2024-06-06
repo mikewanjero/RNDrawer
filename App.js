@@ -1,4 +1,5 @@
 import { Text } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 import { NavigationContainer } from "@react-navigation/native";
 // import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -14,10 +15,27 @@ export default function App() {
         screenOptions={{
           headerStyle: { backgroundColor: "#3c0a6b" },
           headerTintColor: "white",
+          tabBarActiveTintColor: "#3c0a6b",
         }}
       >
-        <BottomTab.Screen name={"Welcome"} component={WelcomeScreen} />
-        <BottomTab.Screen name={"User"} component={UserScreen} />
+        <BottomTab.Screen
+          name={"Welcome"}
+          component={WelcomeScreen}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <AntDesign name="home" color={color} size={size} />
+            ),
+          }}
+        />
+        <BottomTab.Screen
+          name={"User"}
+          component={UserScreen}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <AntDesign name="user" color={color} size={size} />
+            ),
+          }}
+        />
       </BottomTab.Navigator>
     </NavigationContainer>
   );
